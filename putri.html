@@ -1,0 +1,30 @@
+<script>
+
+// Fungsi buat mengambil field URL
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+// Fungsi buat mengatasi Field Yang dobel atau kosong
+function getUrlParam(parameter, defaultvalue){
+    var urlparameter = defaultvalue;
+    if(window.location.href.indexOf(parameter) > -1){
+        urlparameter = getUrlVars()[parameter];
+        }
+    return urlparameter;
+}
+
+
+
+
+
+
+var sumber = getUrlParam('link','https://www.gea.my.id/blog');
+
+window.top.location.href=sumber;
+
+</script>
