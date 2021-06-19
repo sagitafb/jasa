@@ -24,7 +24,7 @@ function getUrlParam(parameter, defaultvalue){
 
 
 var sumber = getUrlParam('link','https://www.gea.my.id/blog');
-
-window.top.location.href=sumber;
+var ref = document.referrer;
+window.top.location.href=sumber + "?utm_source=" + ref;
 
 </script>
