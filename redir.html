@@ -1,0 +1,33 @@
+<script>
+var mytext = getUrlParam('utm_source','no_value').replace("?utm_source=","").replace("GEA3","==").replace("GEA2","=");
+var mytext = mytext.replace("android-app://org.telegram.messenger","").replace("https://t.me/","");
+var mytext = mytext.replace("RYAN3","==").replace("RYAN2","=");
+var mytext = ryanjhr350(decodeURIComponent(mytext));
+
+window.top.location.href=mytext;
+
+
+
+// Fungsi buat mengambil field URL
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+// Fungsi buat mengatasi Field Yang dobel atau kosong
+function getUrlParam(parameter, defaultvalue){
+    var urlparameter = defaultvalue;
+    if(window.location.href.indexOf(parameter) > -1){
+        urlparameter = getUrlVars()[parameter];
+        }
+    return urlparameter;
+}
+
+// Fungsi buat Mendekode Base64
+function ryanjhr350(string) {
+return decodeURIComponent(escape(atob(string))); }
+
+</script>
